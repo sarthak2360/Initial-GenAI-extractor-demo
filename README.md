@@ -1,1 +1,1 @@
-# Initial-GenAI-extractor-demo
+I built a small GenAI extractor demo using FastAPI that ingests text or uploaded text files, extracts PERSON and DATE entities, and stores the results in a local SQLite database. The service uses spaCy and dateparser when available for higher-quality named-entity recognition and date normalization, and otherwise falls back to efficient regex heuristics so the demo runs out-of-the-box without heavy dependencies. I include a demo_runner.py for offline extraction, an example n8n workflow for automation, and sample outputs (JSON/CSV/SQLite).
