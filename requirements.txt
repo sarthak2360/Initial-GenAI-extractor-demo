@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+python-multipart
+# Optional (better results): uncomment and install if desired
+# spacy
+# dateparser

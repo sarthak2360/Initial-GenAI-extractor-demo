@@ -1,0 +1,19 @@
+{
+  "name": "GenAI Extractor (example)",
+  "nodes": [
+    {
+      "parameters": {"httpMethod":"POST","path":"genai-extract"},
+      "name":"Webhook","type":"n8n-nodes-base.webhook","typeVersion":1,"position":[250,300]
+    },
+    {
+      "parameters": {
+        "requestMethod":"POST",
+        "url":"http://localhost:8000/extract",
+        "options":{"bodyContentType":"form-data"},
+        "formData":[{"name":"file","value":"={{$json[\"binary\"][\"data\"]}}","type":"binary"}]
+      },
+      "name":"HTTP Request","type":"n8n-nodes-base.httpRequest","typeVersion":1,"position":[520,300]
+    }
+  ],
+  "connections":{"Webhook":{"main":[[{"node":"HTTP Request","type":"main","index":0}]]}}
+}
